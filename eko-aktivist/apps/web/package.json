@@ -1,0 +1,34 @@
+{
+  "name": "eko-aktivist-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "test:e2e": "playwright test",
+    "format": "cd ../.. && ./apps/web/node_modules/.bin/prettier --write \"**/*.{js,jsx,mjs,cjs,ts,tsx,json,css,scss,md,yml,yaml,html}\"",
+    "format:check": "cd ../.. && ./apps/web/node_modules/.bin/prettier --check \"**/*.{js,jsx,mjs,cjs,ts,tsx,json,css,scss,md,yml,yaml,html}\""
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.20",
+    "@tanstack/react-query": "5.62.8",
+    "date-fns": "^4.4.0",
+    "leaflet": "1.9.4",
+    "react": "18.3.1",
+    "react-datepicker": "^9.1.0",
+    "react-dom": "18.3.1",
+    "react-leaflet": "4.2.1",
+    "react-router-dom": "7.1.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/leaflet": "1.9.14",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-react": "4.3.4",
+    "prettier": "^3.9.9",
+    "typescript": "5.7.2",
+    "vite": "6.0.5"
+  }
+}

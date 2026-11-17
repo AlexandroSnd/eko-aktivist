@@ -1,0 +1,25 @@
+services:
+  api:
+    environment:
+      PUBLIC_ORIGIN: https://${DOMAIN}
+      COOKIE_SECURE: 'true'
+  scheduler:
+    environment:
+      PUBLIC_ORIGIN: https://${DOMAIN}
+      COOKIE_SECURE: 'true'
+  caddy:
+    image: caddy:2.8-alpine
+    environment:
+      DOMAIN: ${DOMAIN}
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - proxy
+volumes:
+  caddy_data:
+  caddy_config:
